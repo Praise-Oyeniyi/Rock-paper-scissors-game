@@ -1,0 +1,10 @@
+@import url('https://fonts.google.com/specimen/Barlow+Semi+Condensed&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* color:#606e85; */
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Barlow Semi Condensed';
+}
