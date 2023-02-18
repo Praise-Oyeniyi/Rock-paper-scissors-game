@@ -4,16 +4,19 @@
 
 @layer components {
     .body{
-        @apply h-screen  w-screen bg-gradient-to-b from-[#1f3757] to-[#141539] text-white overflow-hidden;
+        @apply h-screen w-screen bg-gradient-to-b from-[#1f3757] to-[#141539] text-white overflow-hidden;
+    }
+    .body-inner{
+        @apply mx-auto flex flex-col justify-between space-y-10 sm:space-y-5 h-full py-10 sm:py-5;
     }
     .type-select {
-        @apply bg-center relative bg-no-repeat w-full mx-auto h-[55%] md:w-3/6;
+        @apply bg-center relative bg-no-repeat w-full mx-auto h-[55%] sm:h-[65%] md:w-4/6;
     }
     .type-outer-outer{
-        @apply relative -top-10 flex flex-col w-full h-full justify-between items-center ;
+        @apply relative flex flex-col w-full h-full justify-between items-center ;
     }
     .type-outer{
-        @apply p-3 rounded-full h-24 w-24 flex justify-center items-center bg-gradient-to-r ; 
+        @apply p-4 sm:p-3 rounded-full h-32 w-32 sm:w-24 sm:h-24 flex justify-center items-center bg-gradient-to-r ; 
     }
     .type-inner{
         @apply bg-white rounded-full h-full w-full p-4 flex justify-center items-center
@@ -22,6 +25,6 @@
         @apply w-5/6 h-full;
     }
     .play-btn{
-        @apply bg-white text-[#1f3757] text-sm font-semibold py-4 w-4/6 rounded-xl;
+        @apply bg-white text-[#1f3757] text-sm font-semibold py-4 w-4/6 rounded-xl sm:rounded-lg sm:!w-auto sm:py-3 sm:px-14;
     }
 }

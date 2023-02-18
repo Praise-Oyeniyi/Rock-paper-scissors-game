@@ -43,6 +43,10 @@ const ComputerTurn = (props) => {
         localStorage.setItem('score', JSON.stringify(props.score));
       }
     },[props.score])
+
+
+    
+
     
 
     // generate random numbers within the game range
@@ -71,12 +75,16 @@ const ComputerTurn = (props) => {
 
      if(selected === 'paper'){
       switch (cSelected) {
-        case ('rock'|| 'spock'):
+        case 'rock':
+        case 'spock':
           Win();
           break;
-        case ('scissors'|| 'lizard'):
+
+        case 'scissors':
+        case 'lizard':
           Lose();
           break;
+
         case 'paper':
           Draw();
           break;
@@ -86,12 +94,16 @@ const ComputerTurn = (props) => {
       }
       }else if(selected === 'rock'){
         switch (cSelected) {
-          case ('scissors' || 'lizard'):
+          case 'scissors':
+          case 'lizard':
             Win();
             break;
-          case ('paper' || 'spock'):
+
+          case 'paper':
+          case 'spock':
             Lose();
             break;
+
           case 'rock':
           Draw();
           break;
@@ -101,12 +113,16 @@ const ComputerTurn = (props) => {
         }
       }else if(selected === 'scissors'){
         switch (cSelected) {
-          case ('paper' || 'lizard'):
+          case 'paper':
+          case 'lizard':
             Win();
             break;
-          case ('rock' || 'spock'):
+
+          case 'rock':
+          case 'spock':
             Lose();
             break;
+
           case 'scissors':
             Draw();
             break;
@@ -115,12 +131,16 @@ const ComputerTurn = (props) => {
         }
       } else if(selected === 'lizard'){
         switch (cSelected) {
-          case ('spock'||'paper'):
+          case 'spock':
+          case 'paper':
             Win();
             break;
-          case ('rock'|| 'scissors'):
+
+          case 'rock':
+          case 'scissors':
             Lose();
             break;
+
           case 'lizard':
             Draw();
             break;
@@ -130,12 +150,16 @@ const ComputerTurn = (props) => {
         }
       }else if(selected === 'spock'){
           switch (cSelected) {
-            case ('rock'|| 'scissors'):
+            case'rock':
+            case'scissors':
               Win();
               break;
-            case ('lizard' || 'paper'):
+
+            case 'lizard':
+            case 'paper':
               Lose();
               break;
+
             case 'spock':
               Draw();
               break;
@@ -149,34 +173,41 @@ const ComputerTurn = (props) => {
 
   return (
     <div className="body ">
-      <div className="body-inner w-[90%] md:w-[70%] mx-auto flex flex-col justify-between spae-y-10 h-full py-5">
+      <div className="body-inner w-[90%] sm:w-[70%] md:w-[60%]">
         <ScoreHead bonus={props.bonus} score={props.score} />
 
 
-        <div className={`type-select bg-center relative bg-no-repeat w-full flex flex-col gap-y-14 justify-center items-center mx-auto h-[55%] md:w-3/6 gap-x-5`}>
-            <div className='flex items-start justify-between w-full'>
-              <div className="picked uppercase text-center text-white">
-                  <div className={`type-outer ${select.gradient} p-4 h-36 w-36 `}>
+        <div className={`type-select bg-center relative bg-no-repeat w-full flex flex-col gap-y-14 justify-center items-center mx-auto h-[55%] gap-x-5`}>
+            <div className='flex items-start md:items-center justify-between md: w-full'>
+              <div className="picked uppercase text-white flex flex-col justify-center items-center">
+                  <div className={`type-outer ${select.gradient} p-4 h-36 w-36 sm:w-40 sm:h-40 md:order-2`}>
                     <div className='type-inner'>
-                      <img src={select.image} alt="" className=''/>
+                      <img src={select.image} alt="" className='select-image'/>
                     </div>
 
                   </div>
-                  <h3 className='text-base font-semibold pt-5'>You Picked</h3>
+                  <h3 className='text-base font-semibold pt-5 md:order-1 md:py-5'>You Picked</h3>
               </div>
+
+              {out !== ''?<div className="verdict text-center tracking-wide w-full space-y-3 sm:block hidden">
+              <h2 className='text-4xl font-bold uppercase'>
+                {text}
+              </h2>
+              <button className='play-btn' onClick={()=>navigate('/')}>PlAY AGAIN</button>
+              </div>:''}
 
 
               <div className="picked uppercase flex flex-col justify-center items-center text-white">
-                  <div className={`type-outer self-end ${randomS===null?'':randomS.gradient} p-4 h-36 w-36`}>
+                  <div className={`type-outer self-end ${randomS===null?'':randomS.gradient} p-4 h-36 w-36 sm:w-40 sm:h-40 md:order-2`}>
                     <div className="type-inner">
                       {randomS===null?'':<img src={randomS.image} alt="" className='select-image'/>}
                     </div>
                   </div>
-                  <h3 className='text-base font-semibold pt-5'>The house Picked</h3>
+                  <h3 className='text-base font-semibold pt-5 md:py-5 md:w-full md:text-center'>The house Picked</h3>
               </div>
             </div>
 
-            {out !== ''?<div className="verdict text-center tracking-wide w-full space-y-3">
+            {out !== ''?<div className="verdict text-center tracking-wide w-full space-y-3 sm:hidden md:order-1">
               <h2 className='text-4xl font-bold uppercase'>
                 {text}
               </h2>

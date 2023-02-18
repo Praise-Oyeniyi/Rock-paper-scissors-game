@@ -2,10 +2,11 @@ import React from 'react'
 
 const ScoreHead = (props) => {
   
+  
 
   return (
-    <div className=" uppercase type-score p-4 flex items-center justify-between rounded-md border border-white">
-        <ul className="type leading-none font-semibold text-base ">
+    <div className=" uppercase type-score p-4 flex items-center justify-between rounded-md border border-white sm:py-2">
+        <ul className="type leading-none font-semibold text-base sm:text-sm sm:leading-[.8]">
         <li>Rock</li>
         <li>Paper</li>
         <li>Scissors</li>

@@ -18,16 +18,16 @@ const Index = (props) => {
 
   return (
     <div className="body">
-      <div className="body-inner w-[90%] md:w-[70%] mx-auto flex flex-col justify-between spae-y-10 h-full py-5">
+      <div className="body-inner w-[90%] sm:w-[70%] md:w-[50%]">
         <ScoreHead bonus={props.bonus} score={props.score}/>
 
 
-        <div className={`type-select  ${props.bonus?"bg-[url('./images/bg-pentagon.svg')]":"bg-[url('./images/bg-triangle.svg')]"}`}>
+        <div className={`type-select  ${props.bonus?"bg-[url('./images/bg-pentagon.svg')] -top-3":"bg-[url('./images/bg-triangle.svg')]"}`}>
 
           {props.bonus?
-            <div className="type-outer-outer">
+            <div className="type-outer-outer -top-[10%]">
 
-              <div className='type-outer from-[#ec9e0e] to-[#eca922] ' onClick={()=>navigate(`computer/scissors`)}>
+              <div className='type-outer from-[#ec9e0e] to-[#eca922] h-28 w-28 sm:w-24 sm:h-24' onClick={()=>navigate(`computer/scissors`)}>
                 <div className="type-inner">
                   <img src={scissors} alt="" className='select-image'/>
                 </div>
@@ -35,14 +35,14 @@ const Index = (props) => {
 
 
               <div className='flex w-full justify-between'>
-                <div className={`type-outer from-[#40b9ce] to-[#52bed1]`} onClick={()=>navigate(`computer/spock`)}>
+                <div className={`type-outer from-[#40b9ce] to-[#52bed1] h-28 w-28 sm:w-24 sm:h-24`} onClick={()=>navigate(`computer/spock`)}>
                   <div className="type-inner">
                     <img src={spock} alt="" className='select-image'/>
                   </div>
                 </div>
 
 
-                <div className='type-outer from-[#4865f4] to-[#5671f5]' onClick={()=>navigate(`computer/paper`)}>
+                <div className='type-outer from-[#4865f4] to-[#5671f5] h-28 w-28 sm:w-24 sm:h-24' onClick={()=>navigate(`computer/paper`)}>
                   <div className="type-inner">
                     <img src={paper} alt="" className='select-image'/>
                   </div>
@@ -51,13 +51,13 @@ const Index = (props) => {
 
 
               <div className='flex w-[85%] justify-between relative -bottom-16'>
-                <div className={`type-outer from-[#834fe3] to-[#8c5de5] `} onClick={()=>navigate(`computer/lizard`)}>
+                <div className={`type-outer from-[#834fe3] to-[#8c5de5] h-28 w-28 sm:w-24 sm:h-24`} onClick={()=>navigate(`computer/lizard`)}>
                   <div className="type-inner">
                     <img src={lizard} alt="" className='select-image'/>
                   </div>
                 </div>
 
-                <div className='type-outer from-[#dc2e4e] to-[#dd405d]' onClick={()=>navigate(`computer/rock`)}>
+                <div className='type-outer from-[#dc2e4e] to-[#dd405d] h-28 w-28 sm:w-24 sm:h-24' onClick={()=>navigate(`computer/rock`)}>
                   <div className="type-inner">
                     <img src={rock} alt="" className='select-image'/>
                   </div>
@@ -65,22 +65,22 @@ const Index = (props) => {
               </div>
             </div>
           :
-            <div className="top-[2%] type-outer-outer w-[95%] mx-auto">
-              <div className='flex w-full justify-between'>
-                <div className='type-outer from-[#4865f4] to-[#5671f5] h-32 w-32' onClick={()=>navigate(`computer/paper`)}>
+            <div className="type-outer-outer w-full mx-auto">
+              <div className='flex w-full justify-between relative sm:-top-[5%]'>
+                <div className='type-outer from-[#4865f4] to-[#5671f5]' onClick={()=>navigate(`computer/paper`)}>
                   <div className="type-inner">
                     <img src={paper} alt="" className='select-image'/>
                   </div>
                 </div>
 
-                <div className='type-outer from-[#ec9e0e] to-[#eca922] h-32 w-32 ' onClick={()=>navigate(`computer/scissors`)}>
+                <div className='type-outer from-[#ec9e0e] to-[#eca922]' onClick={()=>navigate(`computer/scissors`)}>
                   <div className="type-inner">
                     <img src={scissors} alt="" className='select-image'/>
                   </div>
                 </div>
               </div>
 
-              <div className='type-outer from-[#dc2e4e] to-[#dd405d] h-32 w-32 -top-[7%] relative' onClick={()=>navigate(`computer/rock`)}>
+              <div className='type-outer from-[#dc2e4e] to-[#dd405d]  -top-[7%] sm:-top-[0] relative' onClick={()=>navigate(`computer/rock`)}>
                   <div className="type-inner">
                     <img src={rock} alt="" className='select-image'/>
                   </div>
